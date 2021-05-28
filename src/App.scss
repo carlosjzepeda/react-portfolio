@@ -1,0 +1,170 @@
+* {
+  box-sizing: content-box;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5em;
+  overflow: hidden;
+}
+
+@mixin list() {
+  display: flex;
+  font-size: 1.5em;
+  gap: 2em;
+  list-style: none;
+}
+
+@mixin coverAnimation {
+  &:hover {
+    color: rgb(255, 255, 255)
+  }
+
+  //ANIMATION
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    transition: transform .3s ease;
+
+  }
+}
+
+body,
+html,
+:root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #b9b9b9;
+  color: rgb(0, 0, 0);
+  font-family: 'Xanh Mono', monospace;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+//CONTAINER DIV CLASS
+.container {
+  @include flexCenter();
+  flex-direction: column;
+
+  .grid {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+
+    h4 {
+      font-style: italic;
+    }
+  }
+}
+
+h1 {
+  font-size: 5em;
+}
+
+//NAVBAR
+nav {
+  ul {
+    @include list();
+    list-style-type: none;
+    position: fixed;
+    padding-right: 2em;
+    z-index: 10;
+    list-style: none;
+    right: 0;
+  }
+
+  li {
+    @include coverAnimation();
+    cursor: pointer;
+  }
+
+}
+
+//IMAGE 
+.image {
+  height: 80vh;
+  cursor: pointer;
+}
+
+//LANDING PAGE COMPONENT  
+
+.title-list {
+  display: flex;
+  font-style: italic;
+}
+
+//INFO PAGE COMPONENT
+button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.item {
+  ul {
+    padding: none;
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 2.5em;
+}
+
+//SLIDES COMPONENT
+
+.image-container{
+  display: flex;
+  align-items: center;
+  gap: 10em;
+  .right  {
+    text-align: right;
+  }
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  gap: 1em;
+  margin-right: 1em;
+  z-index: 10;
+
+}
