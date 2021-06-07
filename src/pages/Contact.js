@@ -3,87 +3,91 @@ import "../App.scss";
 import gsap from "gsap";
 
 const Contact = () => {
+  // TEXT ONLOAD ANIMATION
   useEffect(() => {
-    gsap.from(".item2", {
-      opacity: 0,
+    gsap.from(".text", {
       duration: 1,
-      y: 30,
       delay: 0.5,
-      ease: "power4.out",
-    });
-  });
-  useEffect(() => {
-    gsap.from(".item", {
       opacity: 0,
+      ease: "back",
+      stagger: 0.5,
+      y: 25,
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.from("hr", {
       duration: 1,
-      y: 30,
-      delay: 1,
+      delay: 1.5,
+      opacity: 0,
       ease: "power4.out",
       stagger: 0.5,
+      width: 0,
     });
-  });
-  const emailEnter = () => {
+  }, []);
+
+  const buttonEnter = () => {
     gsap.to("button", {
-      backgroundColor: "gray",
-      width: 200,
-      duration: 0.5,
+      duration: 1,
+      background: "black",
+      color: "white",
       ease: "power4.out",
     });
   };
-  const emailLeave = () => {
+  const buttonLeave = () => {
     gsap.to("button", {
+      duration: 1,
+      background: "none",
+      color: "black",
       ease: "power4.out",
-      duration: 0.5,
-      backgroundColor: "white",
-      width: 150,
     });
   };
+
   return (
     <>
-      <div className='container Contact'>
-        <h2 className='item2'>
-          Hey there and welcome to my page I'm Carlos Zepeda. I'm a web designer
-          / front-end developer based in Salt Lake City, UT. I attended Salt
-          Lake Community College before transferring to Georgia State Unversity
-          in Atlanta to get a Bachelors in Business for Marketing. My hobbies
-          include music production, videography, embroidering and traveling.
-        </h2>
-        <div className='grid item'>
-          <div>
-            <h5>Skills</h5>
-            <ul>
-              <li>
-                HTML5, CSS3, SASS/SCSS, JavaScript(ES6), ReactJS, Bootstrap,
-                GSAP Adobe Photoshop, Adobe After Effects, Adobe Premiere, Adobe
-                XD, Zeplin, Git, AJAX, Axios.
-              </li>
-            </ul>
+      <div className='container'>
+        <div className='contact'>
+          <div className='schools'>
+            <div className='text'>
+              <h5>Skills</h5>
+              <p>
+                HTML5, CSS3, SCSS/SASS, JavaScript(ES6), Typescript, React,
+                Photoshop, AfterEffects, Premiere, Adobe XD, Git, Zeplin.
+              </p>
+            </div>
+            <hr />
+            <div className='text'>
+              <h5>Education</h5>
+              <p>
+                Atlanta, Georgia <br />
+                Georgia State University B.B.A Marketing.
+              </p>
+              <p>
+                Salt Lake City, Utah
+                <br />
+                Salt Lake Community College A.S General Studies.
+              </p>
+            </div>
+            <hr />
           </div>
-          <div>
-            <h5>Education</h5>
-            <ul>
-              <li>
-                Georgia State University, Atlanta, GA, B.B.A Marketing 2019 -
-                Present
-              </li>
-              <li>
-                Salt Lake Community College, Salt Lake City, UT, A.S General
-                Studies 2017-2019
-              </li>
-            </ul>
+          <div className='about-grid'>
+            <p className='text about-text'>
+              Hey, my name is Carlos Zepeda, I'm a web designer/front-end
+              developer based in Salt Lake City, Utah. I studied at the local
+              community college before transfering to Georgia State in Atlanta,
+              Georgia. My hobbies include music production, photography,
+              strumming my guitar, and embroidering.
+            </p>
+            <button
+              className='text about-text'
+              onMouseEnter={buttonEnter}
+              onMouseLeave={buttonLeave}>
+              <a href="mailto:cjzepedaa@gmail.com?subject=I'm interested in hiring you!">
+                SEND EMAIL
+              </a>
+            </button>
           </div>
         </div>
-        <h3 className='item'>
-          Connect with me, just click below to send me an email and I'll respond
-          as soon as possible.
-        </h3>
-        <a
-          className='item'
-          href='mailto:cjzepedaa@gmail.com'
-          onMouseEnter={emailEnter}
-          onMouseLeave={emailLeave}>
-          <button>cjzepedaa@gmail.com</button>
-        </a>
       </div>
     </>
   );

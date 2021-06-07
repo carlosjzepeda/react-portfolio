@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../App.scss";
 import gsap from "gsap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   useEffect(() => {
@@ -19,13 +19,19 @@ const Navbar = () => {
     <nav>
       <ul>
         <li className='list-item'>
-          <Link to='/'>HOME</Link>
+          <NavLink exact to='/'>
+            HOME
+          </NavLink>
         </li>
         <li className='list-item'>
-          <Link to='/work'>WORKS</Link>
+          <NavLink exact to='/work'>
+            WORKS
+          </NavLink>
         </li>
         <li className='list-item'>
-          <Link to='/contact'>CONTACT</Link>
+          <NavLink exact to='/contact'>
+            CONTACT
+          </NavLink>
         </li>
       </ul>
     </nav>
