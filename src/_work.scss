@@ -29,11 +29,13 @@
   }
 }
 
+//MOBILE RESPONSE
 @media only screen and (max-width: 1000px) {
   .project-container {
-    padding: 10em;
+    padding: 4em;
     display: flex;
     flex-direction: column-reverse;
+    text-align: center;
     justify-items: center;
   }
 
@@ -52,13 +54,12 @@
 
     h3 {
       display: flex;
-      align-self: start;
+      justify-content: center;
       font-size: 2.5em;
     }
 
     p {
       display: flex;
-      align-self: flex-end;
       font-size: 1em;
     }
   }

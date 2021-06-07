@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.scss";
 import gsap from "gsap";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(null);
   useEffect(() => {
     gsap.from(".list-item", {
       opacity: 0,
