@@ -9,10 +9,24 @@ const Work = () => {
   useEffect(() => {
     gsap.from(".work-image", {
       ease: "back",
-      y: 100,
+      x: -100,
       opacity: 0,
       duration: 1.5,
     });
+  });
+  useEffect(() => {
+    gsap.fromTo(
+      ".work-image",
+      {
+        ease: "power4.out",
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+      },
+      {
+        duration: 2,
+        ease: "power4.out",
+        clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0 100%)",
+      }
+    );
   });
   // TEXT ONLOAD ANIMATION
   useEffect(() => {
@@ -21,7 +35,7 @@ const Work = () => {
       opacity: 0,
       ease: "back",
       stagger: 0.25,
-      y: 100,
+      x: -100,
     });
   }, []);
 
