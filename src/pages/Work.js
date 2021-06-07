@@ -22,6 +22,7 @@ const Work = () => {
         clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
       },
       {
+        delay: 1,
         duration: 2,
         ease: "power4.out",
         clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0 100%)",
