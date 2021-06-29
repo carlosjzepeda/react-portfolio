@@ -68,7 +68,6 @@ const Contact = () => {
                 Salt Lake Community College A.S General Studies.
               </p>
             </div>
-            <hr />
           </div>
           <div className='about-grid'>
             <p className='text about-text'>
