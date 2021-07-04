@@ -46,7 +46,7 @@ const Work = () => {
       <div className='container'>
         <div className='project-container'>
           <a
-            href='https://60e11ea84fcd840007cfa619--pensive-mayer-4aec60.netlify.app/'
+            href='https://pensive-mayer-4aec60.netlify.app/'
             target='_blank'
             rel='noreferrer'>
             <img className='work-image' src={megan} alt='megan' />
