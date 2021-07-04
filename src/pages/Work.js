@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import kanye from "../images/kanyeimg.png";
 import LOQUEDICEN from "../images/Rauw.png";
+import megan from "../images/megancard.png";
 import "../App.scss";
 import gsap from "gsap";
 
@@ -42,18 +43,24 @@ const Work = () => {
 
   return (
     <>
-      {/* <div className='container'>
+      <div className='container'>
         <div className='project-container'>
-          <img className='work-image' src={LOQUEDICEN} alt='kanye' />
+          <a
+            href='https://60e11ea84fcd840007cfa619--pensive-mayer-4aec60.netlify.app/'
+            target='_blank'
+            rel='noreferrer'>
+            <img className='work-image' src={megan} alt='megan' />
+          </a>
           <div className='work-wrapper'>
-            <h3 className='work-text'>BLANK CASE STUDY</h3>
+            <h3 className='work-text'>REVLON UI REDESIGN[WIP]</h3>
             <p className='work-text'>
-              LOQUEDICEN is a modern redesign on what a music blog website
-              should look like. Made with HTML, CSS, and JavaScript.
+              With Megan The Stallion recently getting a deal with Revlon, I
+              decided to give the website a redesign. Made in React with SASS
+              and the GSAP library.
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className='container'>
         <div className='project-container'>
           <a
